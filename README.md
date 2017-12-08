@@ -1,8 +1,6 @@
 # CS-129.1-B-Kiu-Manlapaz-Perez-Young-
 In partial fulfillment of requirements for the course CS 129.1 B - Special Topics in Software Engineering: Contemporary Database
 
-# CS-129.1-B-Kiu-Manlapaz-Perez-Young-
-In partial fulfillment of requirements for the course CS 129.1 B - Special Topics in Software Engineering: Contemporary Database
 
 
 # How to load the dataset
@@ -78,19 +76,19 @@ mongo localhost:27017
 
 In the mongo terminal:
 
-# show databases
+#show databases
 show dbs
 
-# show collections
+#show collections
 show collections
 
 Now you can start using your database:
 use NBA
 
-# checks if data is running 
+#checks if data is running 
 db.statistics.find().pretty()
 
-# verify replication
+#verify replication
 Exit current mongo instance, and log into a replicate mongo instance:
 
 mongo localhost:27018
@@ -104,13 +102,13 @@ log into your database:
 use NBA
 
 
-# show databases
+#show databases
 show dbs
 
-# show collections
+#show collections
 show collections
 
-# checks if data is running
+#checks if data is running
 db.statistics.find().pretty()
 
 # How to execute the MapReduce functions
@@ -124,7 +122,7 @@ use NBA
 
 Afterwards, run the two MapReduce functions:
 
-# 1ST MAPREDUCE
+#1ST MAPREDUCE
 var map = function() {
     emit({
         Tm: this.Tm, 
@@ -155,10 +153,10 @@ var results = db.runCommand({
 })
 
 
-# MapReduce Report 1
+#MapReduce Report 1
 db.statistics.report.find().pretty()
 
-# 2ND MAPREDUCE
+#2ND MAPREDUCE
 
 var map = function() {
     emit({
@@ -188,7 +186,7 @@ var results = db.runCommand({
     out: 'statistics.report2'
 })
 
-# MapReduce Report 2
+#MapReduce Report 2
 db.statistics.report2.find().pretty()
 
 
